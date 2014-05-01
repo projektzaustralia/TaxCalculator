@@ -26,8 +26,10 @@ public class BasicTaxCalculator
                medicareFinal = 0;
       double giTotal = 0, biTotal = 0, ptsTotal = 0, cdTotal = 0;
       final double levyRates = 0.015;
-      final int MIN_INCOME = 10000;
-      final int MAX_INCOME = 120000;
+      final int A_INCOME = 10000;
+      final int B_INCOME = 40000;
+      final int C_INCOME = 80000;
+      final int D_INCOME = 120000;
 
       //Basic user information to be input
       System.out.print("*** Final Income Tax Calculator ***\n");
@@ -109,29 +111,29 @@ public class BasicTaxCalculator
       Boolean i = false;
       while (i == false)
       {
-         if (taxIncome <= MIN_INCOME)
+         if (taxIncome <= A_INCOME)
          {
             taxPayable = 0;
             i = true;
          }
-         else if (taxIncome > MIN_INCOME && taxIncome <= 40000)
+         else if (taxIncome > A_INCOME && taxIncome <= B_INCOME)
          {
-            taxPayable = (taxIncome - MIN_INCOME) * 0.15;
+            taxPayable = (taxIncome - A_INCOME) * 0.15;
             i = true;
          }
-         else if (taxIncome > 40000 && taxIncome <= 80000)
+         else if (taxIncome > B_INCOME && taxIncome <= C_INCOME)
          {
-            taxPayable = ((taxIncome - 40000) * 0.30) + 4500;
+            taxPayable = ((taxIncome - B_INCOME) * 0.30) + 4500;
             i = true;
          }
-         else if (taxIncome > 80000 && taxIncome <= MAX_INCOME)
+         else if (taxIncome > C_INCOME && taxIncome <= D_INCOME)
          {
-            taxPayable = ((taxIncome - 80000) * 0.40) + 16500;
+            taxPayable = ((taxIncome - C_INCOME) * 0.40) + 16500;
             i = true;
          }
-         else if (taxIncome > MAX_INCOME)
+         else if (taxIncome > D_INCOME)
          {
-            taxPayable = ((taxIncome - MAX_INCOME) * 0.45) + 32500;
+            taxPayable = ((taxIncome - D_INCOME) * 0.45) + 32500;
             i = true;
          }
       }
